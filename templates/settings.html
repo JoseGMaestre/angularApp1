@@ -1,0 +1,94 @@
+
+
+
+    <form class="class-form" name="form" id=""form>
+
+        
+  		
+  		<div class="form-group">
+
+ 			<label for="name">Nombre</label>
+
+            <input type="text" placeholder="Name"   name="name" ng-model="settings.name"    ng-minlength="3" ng-maxlength=20   ng-pattern="/^[a-zA-Z]+$/"  class="form-control" required>
+            
+            <div ng-show="form.name.$dirty && form.name.$invalid">
+            	<div ng-show="form.name.$error.required"> Your name is requiered. </div>
+            	<div ng-show="form.name.$error.minlength"> Your name is too short. </div>
+            	<div ng-show="form.name.$error.maxlength"> Your name is too long. </div>
+            	</div>
+
+        </div>
+
+
+		<div class="form-group">
+
+           
+ 			<label for="Age">Age</label>
+
+            <input type="text" class="form-control" id="age" name="age" placeholder="Age" ng-model="settings.age">
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="inputPassword">Password</label>
+
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+
+        </div>
+
+         <div class="form-group">
+
+            <label for="inputEmail">Email</label>
+
+            <input type="email" class="form-control" id="inputEmail" placeholder="Email" ng-model="settings.inputEmail">
+
+        </div>
+
+        <div class="checkbox">
+
+            <label><input type="checkbox"> Remember me</label>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Login</button>
+
+    </form>
+
+{{ settings}}
+
+  <div class="panel panel-info" >
+                    <div class="panel-heading">
+                        <div class="panel-title">Sign In</div>
+                        <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>
+                    </div>     
+
+ <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+          <i class="icon-calendar"></i>
+          <h3 class="panel-title">Inline Form</h3>
+        </div>
+        
+        <div class="panel-body">
+          <form class="form-inline" role="form">
+            <div class="form-group">
+              <label class="sr-only" for="exampleInputEmail2">Email address</label>
+              <input class="form-control" id="exampleInputEmail2" placeholder="Enter email" type="email">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="exampleInputPassword2">Password</label>
+              <input class="form-control" id="exampleInputPassword2" placeholder="Password" type="password">
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Remember me
+              </label>
+            </div>
+            <button type="submit" class="btn btn-info" title="">Sign in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
