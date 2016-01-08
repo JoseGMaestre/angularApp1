@@ -28,7 +28,36 @@ app.controller('HomeController',function($scope) {
 
 
 app.controller('SettingsController',function($scope) {
-    $scope.name = "Ari-------------";	
-    console.log($scope.name);
+    $scope.settings={
+    	name: "Ari",
+    	age: 12,
+    	inputEmail: "me@exammple.com"
+    };	
 
+    $scope.updateSettings = function() {
+    	console.info("se ha realizado una peticion de act...");
+    }
+
+});
+
+
+app.controller('MailListingController',function($scope) {
+    $scope.email={
+    	'id': 1,
+    	'from': 'fred@fullstack.io',
+    	'to': "me@exammple.com",
+    	'subject': "Great job",
+    	'body': 'Congrats on the release of the book!'
+    };	
+
+    $scope.updateSettings = function() {
+    	console.info("se ha realizado una peticion de act...");
+    }
+
+});
+
+
+
+app.controller('ContentController',function($scope) {
+   console.info("llamado al content")
 });

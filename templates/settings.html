@@ -1,7 +1,7 @@
+   
 
-
-
-    <form class="class-form" name="form" id=""form>
+   <div ng-controller="SettingsController">
+    <form class="class-form" name="form" id="form" ng-submmit="updateSettings('1')">
 
         
   		
@@ -41,7 +41,14 @@
 
             <label for="inputEmail">Email</label>
 
-            <input type="email" class="form-control" id="inputEmail" placeholder="Email" ng-model="settings.inputEmail">
+            <input type="email" class="form-control"  id="inputEmail" name="inputEmail" placeholder="Email" ng-model="settings.inputEmail"    ng-minlength="3" ng-maxlength=20  required>
+
+            <div ng-show="form.inputEmail.$dirty && form.inputEmail.$invalid">
+            	<div ng-show="form.inputEmail.$error.required"> Your email is requiered. </div>
+            	<div ng-show="form.inputEmail.$error.email"> Teienes un error en tu email </div>
+            	<div ng-show="form.inputEmail.$error.maxlength"> Your email is too long. </div>
+            	<div ng-show="form.inputEmail.$error.invalid"> Your email is invalid. </div>
+            	</div>
 
         </div>
 
@@ -51,10 +58,13 @@
 
         </div>
 
+
+
         <button type="submit" class="btn btn-primary">Login</button>
-
+ <button type="Submit 1" class="btn btn-danger" 
+        ng-click="updateSettings()" ng-disabled="form.$dirty && form.$invalid" > Submit Button </button>
     </form>
-
+</div>
 {{ settings}}
 
   <div class="panel panel-info" >
@@ -86,7 +96,7 @@
                 <input type="checkbox"> Remember me
               </label>
             </div>
-            <button type="submit" class="btn btn-info" title="">Sign in</button>
+          <!--   <button type="submit" class="btn btn-info" title="">Sign in</button> -->
           </form>
         </div>
       </div>
